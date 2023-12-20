@@ -174,9 +174,9 @@ void loop()
           //Serial.print("here\n");
           if (poorQuality == 0) {
             ///neo1
-            SetColor(neos1.Color(255,0,0),int(attention/1.5625),true);
+            SetColor(neos1.Color(169,0,0),int(attention/1.5625),true);
             ///neo2
-            SetColor(neos2.Color(0,0,255),int(meditation/1.5625),false);
+            SetColor(neos2.Color(29,117,183),int(meditation/1.5625),false);
             Serial.print("neo1 ");
             Serial.print(int(attention/1.5625));
             Serial.print(" turn ON.\n");
@@ -186,8 +186,8 @@ void loop()
           }
           else 
           {
-              SetColor(neos1.Color(255,255,255),int(attention/1.5625),true);
-              SetColor(neos2.Color(255,255,255),int(meditation/1.5625),false);
+              SetColor(neos1.Color(int(poorQuality*1.275),int(poorQuality*1.275),int(poorQuality*1.275)),int(attention/1.5625),true);
+              SetColor(neos2.Color(int(poorQuality*1.275),int(poorQuality*1.275),int(poorQuality*1.275)),int(meditation/1.5625),false);
           }
 
           Serial.print("===========================\n");
