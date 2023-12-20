@@ -166,31 +166,28 @@ void loop()
 #if !DEBUGOUTPUT
 
         // *** Add your code here ***
-
+        neos1.clear();
+        neos2.clear();
         if (bigPacket)
         {
           Serial.print("===========================\n");
           //Serial.print("here\n");
           if (poorQuality == 0) {
             ///neo1
-            neos1.clear();
+            SetColor(neos1.Color(255,0,0),int(attention/1.5625),true);
             ///neo2
-            SetColor(neos2.Color(255,0,0),int(attention/1.5625),false);
-            Serial.print("neo2 ");
+            SetColor(neos2.Color(0,0,255),int(meditation/1.5625),false);
+            Serial.print("neo1 ");
             Serial.print(int(attention/1.5625));
             Serial.print(" turn ON.\n");
-            //Serial.print("\nneo1 clear and neo2 set\n");
-          }
-
-          else {
-            ///neo1
-            SetColor(neos1.Color(0,255,0),int(poorQuality/3.125),true);
-            ///neo2
-            neos2.clear();
-            Serial.print("neo1 ");
-            Serial.print(int(poorQuality/3.125));
+            Serial.print("neo2 ");
+            Serial.print(int(meditation/1.5625));
             Serial.print(" turn ON.\n");
-            //Serial.print("\nneo2 clear and neo1 set\n");
+          }
+          else 
+          {
+              SetColor(neos1.Color(255,255,255),int(attention/1.5625),true);
+              SetColor(neos2.Color(255,255,255),int(meditation/1.5625),false);
           }
 
           Serial.print("===========================\n");
