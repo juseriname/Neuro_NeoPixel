@@ -173,7 +173,7 @@ void loop()
           //Serial.print("here\n");
           if (poorQuality == 0) {
             ///neo1
-            SetColor(neos1.Color(0,255,0),int(attention/1.5625));
+            SetColor(neos1.Color(0,255,int(meditation*2.55)),int(attention/1.5625));
             Serial.print("green ");
             Serial.print(int(attention/1.5625));
             Serial.print(" turn ON.\n");
